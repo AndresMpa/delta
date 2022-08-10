@@ -1,0 +1,103 @@
+:root {
+  --primary: #233056;
+  --secondary: #090c15;
+  --terdary: #026e00;
+  --letter: #ffffff;
+  --links: rgb(173, 216, 230);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  color: var(--letter);
+  overflow-anchor: none;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  background-color: var(--primary);
+}
+
+ul,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--links);
+}
+
+.server {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.server--banner {
+  padding-top: 5vh;
+  text-align: center;
+}
+
+.server--banner__labels {
+  padding: 5vh 0;
+  margin-bottom: 5vh;
+  background-color: var(--secondary);
+}
+
+.server--banner__title {
+  color: var(--terdary);
+}
+
+.server--box {
+  display: flex;
+  place-items: center;
+}
+
+.server--box__container {
+  margin: 2.5vh auto;
+  height: 70vh;
+  width: 90vw;
+}
+
+.server--table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+
+  color: var(--letter);
+  text-align: left;
+}
+
+.server--table th {
+  color: var(--terdary);
+  font-weight: bold;
+}
+
+.server--table td:first-child {
+  color: var(--links);
+}
+
+.server--table td:last-child {
+  color: var(--letter);
+}
+
+.server--table tr:nth-child(odd) {
+  background-color: var(--secondary);
+}
+
+.server--table th,
+.server--table td {
+  overflow: hidden;
+  padding: 15px;
+}
+.server--table tr:first-child {
+  background-color: var(--secondary);
+}
+
+.server--table th:first-child,
+.server--table td:first-child {
+  width: 80%;
+}
