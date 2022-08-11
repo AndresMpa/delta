@@ -4,6 +4,7 @@
   "description": "Small servers used to handle files CRUD",
   "main": "index.js",
   "scripts": {
+    "start": "npx nodemon index.js",
     "test": "jest"
   },
   "keywords": [
