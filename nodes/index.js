@@ -3,6 +3,7 @@ const socket = require('./config/socket');
 const { config } = require('./config');
 const endpoint = require('./routes');
 const express = require('express');
+const morgan = require("morgan");
 const chalk = require('chalk');
 const cors = require('cors');
 
@@ -12,6 +13,7 @@ const app = express();
 // Middle wares
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(morgan("dev"));
 app.use(cors());
 
 // HTTP server
