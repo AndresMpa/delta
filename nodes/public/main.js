@@ -1,6 +1,6 @@
 const reload = document.querySelector('#reload');
 const box = document.querySelector('.server--box');
-const title = document.querySelector('.server--banner__title')
+const title = document.querySelector('.server--banner__title');
 
 /*
 Send a request to server host to get files
@@ -8,11 +8,12 @@ Send a request to server host to get files
 
 const getFiles = async () => {
   const path = `${location.host}/api/v1/files`;
-  const filesInfo = await fetch(path, {
+  fetch(path, {
     method: 'GET',
-  });
-
-  return filesInfo;
+  })
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => console.error(error));
 };
 
 /*
@@ -25,7 +26,7 @@ const showFileInfo = () => {
 
   const table = document.querySelector('.server--table tbody');
 
-  [1, 2, 4].forEach((item) => {
+  [1, 2, 3].forEach((item) => {
     const newItem = document.createElement('tr');
 
     const file_name = document.createElement('td');
@@ -55,7 +56,7 @@ const reloadQuery = () => {
   if (registers.length <= 2) {
     box.style.display = 'none';
     title.style.display = 'none';
-    reload.style.display = 'flex';
+    reload.style.display = 'initial';
   } else {
     box.style.display = 'flex';
     reload.style.display = 'none';
