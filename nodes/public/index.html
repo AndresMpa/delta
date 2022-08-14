@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="./asset/logo.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link
       rel="stylesheet"
       crossorigin="anonymous"
@@ -20,8 +24,9 @@
   <body>
     <main class="server">
       <section class="server--banner">
-        <article class="server--banner__labels">
+        <article class="server--banner__labels animate__animated animate__bounce">
           <h1 class="server--banner__title">THIS SERVER CONTAINS</h1>
+          <button class="server--banner__button" id="reload">Update server</button>
         </article>
       </section>
       <section class="server--box">
@@ -31,13 +36,10 @@
               <th>FILE NAME</th>
               <th>FILE SIZE (kB)</th>
             </tr>
-            <tr>
-              <td>test_file.mp4</td>
-              <td>234132 kB</td>
-            </tr>
           </table>
         </article>
       </section>
     </main>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
