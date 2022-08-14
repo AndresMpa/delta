@@ -9,7 +9,7 @@ const cors = require('cors');
 // Express istance
 const app = express();
 
-// Middlewares
+// Middle wares
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
