@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "jest": "^28.1.3",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.19"
   }
 }
