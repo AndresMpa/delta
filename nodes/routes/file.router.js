@@ -18,16 +18,6 @@ router.get('/', async (req, res) => {
 
 router.post('/', upload.single('file'), (req, res) => {
   console.log(req, res);
-  /*
-  controller
-    .addMessage(req.body.chat, req.body.user, req.body.message, req.file)
-    .then((data) => {
-      success(req, res, data, 201);
-    })
-    .catch((err) => {
-      error(req, res, `Error creating message ${err}`, 400);
-    });
-  */
 });
 
 module.exports = router;
