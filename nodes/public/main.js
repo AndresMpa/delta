@@ -64,6 +64,8 @@ const reloadQuery = () => {
   }
 };
 
+window.onload = () => reload.textContent += `: ${location.port}`
+
 reload.onmouseleave = () =>
   reload.classList.remove('animate__animated', 'animate__pulse');
 reload.onmouseover = () =>
