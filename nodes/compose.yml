@@ -10,8 +10,6 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3000
-    volumes:
-      - ./:/app
   server_2:
     build: .
     restart: always
@@ -23,8 +21,6 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3001
-    volumes:
-      - ./:/app
   server_3:
     build: .
     restart: always
@@ -36,8 +32,6 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3002
-    volumes:
-      - ./:/app
   server_4:
     build: .
     restart: always
@@ -49,6 +43,3 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3003
-    volumes:
-      - ./:/app
-

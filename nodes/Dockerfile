@@ -10,4 +10,4 @@ COPY [".", "/app"]
 
 ENTRYPOINT [ "npm" ]
 
-CMD [ "run", "start" ]
+CMD [ "run", "docker" ]
