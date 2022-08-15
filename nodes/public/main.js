@@ -7,12 +7,14 @@ Send a request to server host to get files
 */
 
 const getFiles = async () => {
-  const path = `${location.host}/api/v1/files`;
-  fetch(path, {
+  const path = `http://${location.host}/api/v1/files`;
+  return fetch(path, {
     method: 'GET',
   })
     .then((response) => response.json())
-    .then((data) => data)
+    .then((data) => {
+      return data;
+    })
     .catch((error) => console.error(error));
 };
 
@@ -21,12 +23,12 @@ Get information from getFiles(), then use that
 information to created nodes with it in them
 */
 
-const showFileInfo = () => {
-  const information = getFiles() || [];
+const showFileInfo = async () => {
+  const information = await getFiles() || [];
 
   const table = document.querySelector('.server--table tbody');
 
-  [1, 2, 3].forEach((item) => {
+  information.forEach((item) => {
     const newItem = document.createElement('tr');
 
     const file_name = document.createElement('td');
@@ -47,8 +49,8 @@ Show a button to reload, if it is pressed;
 it trigger a query
 */
 
-const reloadQuery = () => {
-  showFileInfo();
+const reloadQuery = async () => {
+  await showFileInfo();
 
   const registers =
     document.querySelector('.server--table').lastChild.childNodes;
@@ -64,10 +66,17 @@ const reloadQuery = () => {
   }
 };
 
-window.onload = () => reload.textContent += `: ${location.port}`
+window.onload = () => {
+  reload.textContent += `: ${location.port}`;
+  const content = title.textContent;
+
+  title.textContent = `${content.slice(0, content.indexOf(' '))} ${
+    location.port
+  }${content.slice(content.indexOf(' '), content.length)}`;
+};
 
 reload.onmouseleave = () =>
   reload.classList.remove('animate__animated', 'animate__pulse');
 reload.onmouseover = () =>
   reload.classList.add('animate__animated', 'animate__pulse');
-reload.onclick = () => reloadQuery();
+reload.onclick = async () => await reloadQuery();
