@@ -4,10 +4,10 @@ COPY ./requirements.txt /app/requirements.txt
 
 WORKDIR /app
 
-RUN pip install -r requirements.txt
+RUN pip --no-cache-dir install "fastapi[all]"
 
 COPY [".", "/app"]
 
 ENTRYPOINT [ "python" ]
 
-CMD [ "view.py" ]
+CMD [ "main.py" ]
