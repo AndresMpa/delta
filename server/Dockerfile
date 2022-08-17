@@ -1,13 +1,13 @@
 FROM python:3.10-alpine
 
-COPY ./requirements.txt /app/requirements.txt
-
 WORKDIR /app
 
-RUN pip --no-cache-dir install "fastapi[all]"
+COPY ./requirements.txt ./app/requirements.txt
+
+RUN pip install --no-cache-dir --upgrade -r ./app/requirements.txt
 
 COPY [".", "/app"]
 
-ENTRYPOINT [ "python" ]
+ENTRYPOINT [ "uvicorn" ]
 
-CMD [ "main.py" ]
+CMD [ "main:app", "--host", "0.0.0.0", "--port", "80" ]
