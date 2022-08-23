@@ -28,7 +28,7 @@ pytyhon ./server.py
 
 ## file.server
 
-This is a secondary server, quite similar to what you should saw at "point_2", it's necessary to
+This is a secondary server, quite similar to what you should saw at "task_2", it's necessary to
 run it before to send request as a logged user, so; to make it possible just change to its directory
 them run it like this:
 
